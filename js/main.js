@@ -2,7 +2,7 @@
 // Another html file linked
 document.getElementById('Blog-btn').addEventListener('click', function(){
     console.log('clicked');
-    window.location.href = '/question.html';
+    window.location.href = './question.html';
 })
 
 // Donate Calculate
