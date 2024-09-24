@@ -4,24 +4,41 @@
 // ============ Card 1
 document.getElementById('nuakhali-donate-btn')
     .addEventListener('click', function () {
-        const nuakhaliinput = getInputValueById('nuakhali-input');
+        const nuakhaliInput = getInputValueById('nuakhali-input');
         const nuakhaliDonate = getTextValueById('nuakhali-donate')
 
-        if (!isNaN(nuakhaliinput) && nuakhaliinput > 0) {
+        if (!isNaN(nuakhaliInput) && nuakhaliInput > 0) {
             const balance = getTextValueById('balance');
 
-            if(nuakhaliinput > balance){
+            if (nuakhaliInput > balance) {
                 alert('invalid');
-                return ;
+                return;
             }
 
-            const nuakhaliDonateAmount = nuakhaliinput + nuakhaliDonate;
-            const newBalance = balance - nuakhaliinput;
+            const nuakhaliDonateAmount = nuakhaliInput + nuakhaliDonate;
+            const newBalance = balance - nuakhaliInput;
 
             document.getElementById('nuakhali-donate').innerText = nuakhaliDonateAmount;
             document.getElementById('balance').innerText = newBalance;
 
+
+            // donation history 
+            const historyList = document.getElementById("history-list");
             
+            const card = document.createElement('div')
+            card.classList.add("p-8", "border-2", "w-full", "rounded")
+            card.innerHTML =`
+            <p class="text-[20px] font-bold mb-3"> 
+                ${nuakhaliInput} Taka is Donated for Flood Relief in Nuakhali,Bangladesh
+            </p>
+            <p>
+                ${new Date()}
+            </p>
+
+            `
+            historyList.prepend(card)
+            console.log(historyList)
+
         } else {
             alert('invaid input')
         }
@@ -32,24 +49,41 @@ document.getElementById('nuakhali-donate-btn')
 // ============ Card 2
 document.getElementById('feni-donate-btn')
     .addEventListener('click', function () {
-        const feniinput = getInputValueById('feni-input');
+        const feniInput = getInputValueById('feni-input');
         const feniDonate = getTextValueById('feni-donate')
 
-        if (!isNaN(feniinput) && feniinput > 0) {
+        if (!isNaN(feniInput) && feniInput > 0) {
             const balance = getTextValueById('balance');
 
-            if(feniinput > balance){
+            if (feniInput > balance) {
                 alert('invalid');
-                return ;
+                return;
             }
 
-            const feniDonateAmount = feniinput + feniDonate;
-            const newFeniDonaetAmout = balance - feniinput;
+            const feniDonateAmount = feniInput + feniDonate;
+            const newFeniDonaetAmout = balance - feniInput;
             console.log(newFeniDonaetAmout)
 
             document.getElementById('feni-donate').innerText = feniDonateAmount;
             document.getElementById('balance').innerText = newFeniDonaetAmout;
 
+
+           
+            // donation history 
+            const historyList = document.getElementById("history-list");
+            
+            const card = document.createElement('div')
+            card.classList.add("p-8", "border-2", "w-full", "rounded")
+            card.innerHTML =`
+            <p class="text-[20px] font-bold mb-3"> 
+                ${feniInput} Taka is Donated for Flood Relief in Nuakhali,Bangladesh
+            </p>
+            <p>
+                ${new Date()}
+            </p>
+
+            `
+            historyList.prepend(card)
 
         } else {
             alert('invalid')
@@ -63,27 +97,70 @@ document.getElementById('feni-donate-btn')
 
 document.getElementById('quata-donate-btn')
     .addEventListener('click', function () {
-        const quatainput = getInputValueById('quata-input');
+        const quataInput = getInputValueById('quata-input');
         const quataDonate = getTextValueById('quata-donate')
 
-        if (!isNaN(quatainput) && quatainput > 0) {
+        if (!isNaN(quataInput) && quataInput > 0) {
             const balance = getTextValueById('balance');
 
-            if(quatainput > balance){
+            if (quataInput > balance) {
                 alert('invalid');
-                return ;
+                return;
             }
 
-            const quataDonateAmount = quatainput + quataDonate;
-            const newquataDonaetAmout = balance - quatainput;
+            const quataDonateAmount = quataInput + quataDonate;
+            const newquataDonaetAmout = balance - quataInput;
             console.log(newquataDonaetAmout)
 
             document.getElementById('quata-donate').innerText = quataDonateAmount;
             document.getElementById('balance').innerText = newquataDonaetAmout;
 
+            
+            // donation history 
+            const historyList = document.getElementById("history-list");
+            
+            const card = document.createElement('div')
+            card.classList.add("p-8", "border-2", "w-full", "rounded")
+            card.innerHTML =`
+            <p class="text-[20px] font-bold mb-3"> 
+                ${quataInput} Taka is Donated for Flood Relief in Nuakhali,Bangladesh
+            </p>
+            <p>
+                ${new Date()}
+            </p>
+
+            `
+            historyList.prepend(card)
 
         } else {
             alert('invalid')
         }
 
+    });
+
+
+// ====================== =  Switch Button = =================================//
+
+// document.getElementById('donate-switch-btn')
+//     .addEventListener('click', function () {
+//         getSwitchButton('donate-btn-container');
+
+//         // document.getElementById('donate-switch-btn').addEventListener()
+//     });
+
+document.getElementById('history-switch-btn')
+    .addEventListener('click', function () {
+        document.getElementById('history-switch-btn').classList.add('bg-lime-400');
+        document.getElementById('donate-switch-btn').classList.remove('bg-lime-400');
+        document.getElementById('donate-btn-container').classList.add('hidden');
+        document.getElementById('history-list').classList.remove('hidden')
+    });
+
+
+    document.getElementById('donate-switch-btn')
+    .addEventListener('click', function () {
+        document.getElementById('history-switch-btn').classList.remove('bg-lime-400');
+        document.getElementById('donate-switch-btn').classList.add('bg-lime-400');
+        document.getElementById('donate-btn-container').classList.remove('hidden');
+        document.getElementById('history-list').classList.add('hidden')
     });
