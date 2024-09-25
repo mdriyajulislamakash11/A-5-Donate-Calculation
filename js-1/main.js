@@ -5,21 +5,27 @@
 document.getElementById('nuakhali-donate-btn')
     .addEventListener('click', function () {
         const nuakhaliInput = getInputValueById('nuakhali-input');
-        const nuakhaliDonate = getTextValueById('nuakhali-donate')
+        const nuakhaliDonate = getTextValueById('nuakhali-donate');
+        
+
 
         if (!isNaN(nuakhaliInput) && nuakhaliInput > 0) {
             const balance = getTextValueById('balance');
 
             if (nuakhaliInput > balance) {
-                alert('invalid');
+                alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value');
                 return;
             }
 
             const nuakhaliDonateAmount = nuakhaliInput + nuakhaliDonate;
             const newBalance = balance - nuakhaliInput;
 
-            document.getElementById('nuakhali-donate').innerText = nuakhaliDonateAmount;
-            document.getElementById('balance').innerText = newBalance;
+            document.getElementById('nuakhali-donate').innerText = parseFloat(nuakhaliDonateAmount.toFixed(2));
+            document.getElementById('balance').innerText = parseFloat(newBalance.toFixed(2));
+
+
+
+            document.getElementById('on-a').classList.remove('hidden')
 
 
             // donation history 
@@ -40,10 +46,15 @@ document.getElementById('nuakhali-donate-btn')
             console.log(historyList)
 
         } else {
-            alert('invaid input')
+            alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value')
         }
 
     });
+
+    
+    document.getElementById('off-a').addEventListener('click',function(){
+        document.getElementById('on-a').classList.add('hidden')
+    })
 
 
 // ============ Card 2
@@ -56,7 +67,7 @@ document.getElementById('feni-donate-btn')
             const balance = getTextValueById('balance');
 
             if (feniInput > balance) {
-                alert('invalid');
+                alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value');
                 return;
             }
 
@@ -64,8 +75,10 @@ document.getElementById('feni-donate-btn')
             const newFeniDonaetAmout = balance - feniInput;
             console.log(newFeniDonaetAmout)
 
-            document.getElementById('feni-donate').innerText = feniDonateAmount;
-            document.getElementById('balance').innerText = newFeniDonaetAmout;
+            document.getElementById('feni-donate').innerText = parseFloat(feniDonateAmount.toFixed(2));
+            document.getElementById('balance').innerText = parseFloat(newFeniDonaetAmout.toFixed(2));
+
+            document.getElementById('on-b').classList.remove('hidden')
 
 
            
@@ -86,10 +99,14 @@ document.getElementById('feni-donate-btn')
             historyList.prepend(card)
 
         } else {
-            alert('invalid')
+            alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value')
         }
 
     });
+
+    document.getElementById('off-b').addEventListener('click',function(){
+        document.getElementById('on-b').classList.add('hidden')
+    })
 
 
 
@@ -104,7 +121,7 @@ document.getElementById('quata-donate-btn')
             const balance = getTextValueById('balance');
 
             if (quataInput > balance) {
-                alert('invalid');
+                alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value');
                 return;
             }
 
@@ -112,8 +129,10 @@ document.getElementById('quata-donate-btn')
             const newquataDonaetAmout = balance - quataInput;
             console.log(newquataDonaetAmout)
 
-            document.getElementById('quata-donate').innerText = quataDonateAmount;
-            document.getElementById('balance').innerText = newquataDonaetAmout;
+            document.getElementById('quata-donate').innerText = parseFloat(quataDonateAmount.toFixed(2));
+            document.getElementById('balance').innerText = parseFloat(newquataDonaetAmout.toFixed(2));
+
+            document.getElementById('on-c').classList.remove('hidden')
 
             
             // donation history 
@@ -133,10 +152,14 @@ document.getElementById('quata-donate-btn')
             historyList.prepend(card)
 
         } else {
-            alert('invalid')
+            alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value')
         }
 
     });
+
+    document.getElementById('off-c').addEventListener('click',function(){
+        document.getElementById('on-c').classList.add('hidden')
+    })
 
 
 // ====================== =  Switch Button = =================================//
@@ -163,4 +186,4 @@ document.getElementById('history-switch-btn')
         document.getElementById('donate-switch-btn').classList.add('bg-lime-400');
         document.getElementById('donate-btn-container').classList.remove('hidden');
         document.getElementById('history-list').classList.add('hidden')
-    });
+    });
