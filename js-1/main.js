@@ -1,4 +1,4 @@
-// 
+// donate card 
 
 
 // ============ Card 1
@@ -13,7 +13,7 @@ document.getElementById('nuakhali-donate-btn')
             const balance = getTextValueById('balance');
 
             if (nuakhaliInput > balance) {
-                alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value');
+                alert('Please insure that your Valid input amount and available balance.');
                 return;
             }
 
@@ -46,7 +46,7 @@ document.getElementById('nuakhali-donate-btn')
             console.log(historyList)
 
         } else {
-            alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value')
+            alert('Please insure that your Valid input amount and available balance.');
         }
 
     });
@@ -67,7 +67,7 @@ document.getElementById('feni-donate-btn')
             const balance = getTextValueById('balance');
 
             if (feniInput > balance) {
-                alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value');
+                alert('Please insure that your Valid input amount and available balance.');
                 return;
             }
 
@@ -99,7 +99,7 @@ document.getElementById('feni-donate-btn')
             historyList.prepend(card)
 
         } else {
-            alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value')
+            alert('Please insure that your Valid input amount and available balance.');
         }
 
     });
@@ -121,7 +121,7 @@ document.getElementById('quata-donate-btn')
             const balance = getTextValueById('balance');
 
             if (quataInput > balance) {
-                alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value');
+                alert('Please insure that your Valid input amount and available balance.');
                 return;
             }
 
@@ -152,7 +152,7 @@ document.getElementById('quata-donate-btn')
             historyList.prepend(card)
 
         } else {
-            alert('Kindly Insure:\n -Valid Amount\n -Sufficient Fund\n -Amount must be Positive Value')
+            alert('Please insure that your Valid input amount and available balance.');
         }
 
     });
@@ -164,12 +164,6 @@ document.getElementById('quata-donate-btn')
 
 // ====================== =  Switch Button = =================================//
 
-// document.getElementById('donate-switch-btn')
-//     .addEventListener('click', function () {
-//         getSwitchButton('donate-btn-container');
-
-//         // document.getElementById('donate-switch-btn').addEventListener()
-//     });
 
 document.getElementById('history-switch-btn')
     .addEventListener('click', function () {
